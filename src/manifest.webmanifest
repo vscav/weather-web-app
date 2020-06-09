@@ -1,0 +1,19 @@
+{
+    "name": "Weather Dashboard App",
+    "short_name": "Weather",
+    "start_url": "/weather-app-dark-sky-api-parcel/src/index.html",
+    "display": "standalone",
+    "description": "Don't get caught out in the rain. Get up to date forecasts with the best weather app.",
+    "icons": [
+        {
+            "src": "assets/images/favicons/weather-favicon-16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/images/favicons/weather-favicon-32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        }
+    ]
+}
