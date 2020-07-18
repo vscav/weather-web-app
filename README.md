@@ -2,10 +2,9 @@
 > Don't get caught out in the rain. Get up to date forecasts with a cool weather app.
 
 ## How to install
-1. Install Node.js, Webpack and Parcel
-2. Open your editor and the project folder in the terminal
-3. Install all the dependencies by running `npm install`
-4. Develop with `npm run dev`
+1. Open your editor and the project folder in the terminal
+2. Install all the dependencies by running `npm install`
+3. Develop with `npm run dev`
 
 ## API keys
 
