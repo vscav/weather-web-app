@@ -18,6 +18,7 @@ const KEYS = {
 
 export { KEYS };
 ```
+For your Google app project, you will need to enable Maps, Places and Geocoding.
 
 ## Congrats!
 
