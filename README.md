@@ -1,10 +1,11 @@
 # Weather web application
+
 > Don't get caught out in the rain. Get up to date forecasts with a cool weather app.
 
 ## How to install
 1. Open your editor and the project folder in the terminal
-2. Install all the dependencies by running `npm install`
-3. Develop with `npm run dev`
+2. Install all the dependencies by running `yarn`
+3. Develop with `yarn dev`
 
 ## API keys
 
