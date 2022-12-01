@@ -1,5 +1,26 @@
-const DAY = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    MONTH = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const DAY = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ],
+  MONTH = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
 /**
  * Format the time and create a new date.
@@ -7,8 +28,8 @@ const DAY = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "
  * @returns {object} Returns a date object.
  */
 const formatTimestamp = (timestamp) => {
-    return new Date(timestamp * 1000);
-}
+  return new Date(timestamp * 1000);
+};
 
 /**
  * Private function.
@@ -17,8 +38,8 @@ const formatTimestamp = (timestamp) => {
  * @returns {string}
  */
 const getClockPeriod = (hours) => {
-    return (hours >= 12) ? " PM" : " AM";
-}
+  return hours >= 12 ? " PM" : " AM";
+};
 
 /**
  * Get the day of the week.
@@ -26,8 +47,8 @@ const getClockPeriod = (hours) => {
  * @returns {string}
  */
 const getDay = (timestamp) => {
-    return DAY[timestamp.getDay()];
-}
+  return DAY[timestamp.getDay()];
+};
 
 /**
  * Get the time (without minutes).
@@ -35,18 +56,18 @@ const getDay = (timestamp) => {
  * @returns {string}
  */
 const getDayTime = (timestamp) => {
-    let hours = timestamp.getHours();
-    let timeValue;
-    if (hours > 0 && hours <= 12) {
-        timeValue = "" + hours;
-    } else if (hours > 12) {
-        timeValue = "" + (hours - 12);
-    } else if (hours == 0) {
-        timeValue = "12";
-    }
-    timeValue += getClockPeriod(hours);
-    return timeValue;
-}
+  let hours = timestamp.getHours();
+  let timeValue;
+  if (hours > 0 && hours <= 12) {
+    timeValue = "" + hours;
+  } else if (hours > 12) {
+    timeValue = "" + (hours - 12);
+  } else if (hours == 0) {
+    timeValue = "12";
+  }
+  timeValue += getClockPeriod(hours);
+  return timeValue;
+};
 
 /**
  * Get the time (with minutes).
@@ -54,23 +75,23 @@ const getDayTime = (timestamp) => {
  * @returns {string}
  */
 const getPreciseDayTime = (timestamp) => {
-    let hours = timestamp.getHours();
-    let minutes = timestamp.getMinutes();
-    let timeValue;
-    if (hours > 0 && hours <= 12) {
-        timeValue = hours + ":";
-    } else if (hours > 12) {
-        timeValue = (hours - 12) + ":";
-    } else if (hours == 0) {
-        timeValue = "12:";
-    }
-    if (minutes < 10) {
-        timeValue += "0" + minutes;
-    } else {
-        timeValue += minutes;
-    }
-    timeValue += getClockPeriod(hours);
-    return timeValue;
-}
+  let hours = timestamp.getHours();
+  let minutes = timestamp.getMinutes();
+  let timeValue;
+  if (hours > 0 && hours <= 12) {
+    timeValue = hours + ":";
+  } else if (hours > 12) {
+    timeValue = hours - 12 + ":";
+  } else if (hours == 0) {
+    timeValue = "12:";
+  }
+  if (minutes < 10) {
+    timeValue += "0" + minutes;
+  } else {
+    timeValue += minutes;
+  }
+  timeValue += getClockPeriod(hours);
+  return timeValue;
+};
 
-export { DAY, MONTH, formatTimestamp, getDay, getDayTime, getPreciseDayTime }
+export { DAY, MONTH, formatTimestamp, getDay, getDayTime, getPreciseDayTime };

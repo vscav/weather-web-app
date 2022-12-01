@@ -1,6 +1,6 @@
-import { PROXY } from './proxy.js'
-import { COLORS } from './color.js'
-import { renderErrorMessage } from './message.js'
+import { PROXY } from "./proxy.js";
+// import { COLORS } from "./color.js";
+import { renderErrorMessage } from "./message.js";
 
 /**
  * Fetch the weather using the Dark Sky API.
@@ -10,14 +10,14 @@ import { renderErrorMessage } from './message.js'
  * @returns {object} Data return by the API (JSON object).
  */
 const fetchWeather = async (apiKey, latitude, longitude) => {
-    let darkSkyApiLink = `${PROXY}https://api.darksky.net/forecast/${apiKey}/${latitude},${longitude}?exclude=minutely,alerts,flags`;
-    try {
-        const response = await fetch(darkSkyApiLink);
-        return response.json();
-    } catch (e) {
-        renderErrorMessage(e);
-    }
-}
+  let darkSkyApiLink = `${PROXY}https://api.darksky.net/forecast/${apiKey}/${latitude},${longitude}?exclude=minutely,alerts,flags`;
+  try {
+    const response = await fetch(darkSkyApiLink);
+    return response.json();
+  } catch (e) {
+    renderErrorMessage(e);
+  }
+};
 
 /**
  * Power the icon (using skycons library) of the current weather.
@@ -31,4 +31,4 @@ const fetchWeather = async (apiKey, latitude, longitude) => {
     skycons.play();
 }*/
 
-export { fetchWeather }
+export { fetchWeather };

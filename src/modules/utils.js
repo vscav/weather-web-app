@@ -4,11 +4,11 @@
  * @returns {number} The temperature in celcius degrees.
  */
 const fToC = (fahrenheit) => {
-    let fTemp = fahrenheit,
-        cTemp = (fTemp - 32) * 5 / 9;
+  let fTemp = fahrenheit,
+    cTemp = ((fTemp - 32) * 5) / 9;
 
-    return cTemp;
-}
+  return cTemp;
+};
 
 /**
  * Convert mph speed to Km/h speed.
@@ -16,11 +16,11 @@ const fToC = (fahrenheit) => {
  * @returns {number} The Km/h speed.
  */
 const mphTokmh = (mph) => {
-    let mphSpeed = mph,
-        kmhSpeed = mphSpeed * 1.609344;
+  let mphSpeed = mph,
+    kmhSpeed = mphSpeed * 1.609344;
 
-    return kmhSpeed;
-}
+  return kmhSpeed;
+};
 
 /**
  * Convert wind degree direction in wind cardinal direction.
@@ -28,10 +28,27 @@ const mphTokmh = (mph) => {
  * @returns {string} The cardinal points.
  */
 const degToCard = (deg) => {
-    let val = Math.floor((deg / 22.5) + 0.5);
-    let arr = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
-    return arr[(val % 16)];
-}
+  let val = Math.floor(deg / 22.5 + 0.5);
+  let arr = [
+    "N",
+    "NNE",
+    "NE",
+    "ENE",
+    "E",
+    "ESE",
+    "SE",
+    "SSE",
+    "S",
+    "SSW",
+    "SW",
+    "WSW",
+    "W",
+    "WNW",
+    "NW",
+    "NNW",
+  ];
+  return arr[val % 16];
+};
 
 /**
  * Transform a decimal number into his percentage equivalent.
@@ -39,7 +56,7 @@ const degToCard = (deg) => {
  * @returns {number}
  */
 const decimalToPercentage = (decimal) => {
-    return Math.round(decimal * 100);
-}
+  return Math.round(decimal * 100);
+};
 
-export { fToC, mphTokmh, degToCard, decimalToPercentage }
+export { fToC, mphTokmh, degToCard, decimalToPercentage };
